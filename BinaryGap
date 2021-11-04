@@ -1,0 +1,45 @@
+//This code takes an integer and converts it to a binary number. It then calculates what is called a Binary gap of the binary number.
+//A binary Gap is longest length of consecutive zeros between two '1's in a binary number.
+//Author Labson Koloko
+// 2021.11.04
+#include <stdio.h>
+int solution(int N) {
+    int a[32],i,j=0,indx=0, first=0,zerocnt,maxcnt;
+    if(N<1){
+       return 0;
+    }
+    else{
+        for(i=0;N>0;i++){
+            a[i]=N%2;
+            j++;
+            N=N/2;
+        }
+        for(i=0;i<j;i++){
+            if(a[i]==1){
+                first=1;
+                indx=i;
+                zerocnt=0;
+                maxcnt=0;
+                break;
+            }
+        }
+        for(i=indx+1;i<j;i++){
+            if(a[i]==0){
+            zerocnt++;
+            }
+            if(a[i]==1){
+                if(zerocnt>=maxcnt){
+                    maxcnt=zerocnt;
+                    zerocnt=0;
+                }
+                else{
+                    if(zerocnt<maxcnt){
+                        zerocnt=0;
+                    }
+                }
+            }
+        }    
+    
+    }
+    return maxcnt;
+}
