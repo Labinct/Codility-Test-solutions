@@ -1,1 +1,14 @@
-
+int solution(int X, int Y, int D) {
+    // write your code in C++14 (g++ 6.2.0)
+     int l,j,k;
+    k=Y%D;
+    l=(Y-X)/D;
+    j=X+D;
+    //cout<< l<< endl;
+    if(k<D && (Y-j)%D==0){
+        return l;
+    }
+    if(k<D && (Y-j)%D!=0){
+        return l+1;
+   }
+}
