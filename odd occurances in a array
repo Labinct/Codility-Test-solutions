@@ -1,5 +1,5 @@
 // The code finds the unpaired element in an array containing N number of odd integers.
- #include <algorithm>
+#include <algorithm>
 
 int solution(vector<int> &A) {
     int l=A.size();
